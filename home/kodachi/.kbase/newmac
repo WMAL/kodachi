@@ -5,4 +5,5 @@
 # http://www.om77.net
 # script starts here: 
 sudo macchanger -r eth0;
+sudo macchanger -r wlan0;
 notify-send "New Mac address has been assigned";

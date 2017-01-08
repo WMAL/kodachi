@@ -70,5 +70,5 @@ TEXT
 
 
 ${voffset 250}
-${goto 10}${font Ubuntu:size=9,weight:bold}${color gray}${blink Caution: Kodachi new version is available....} 
-
+${goto 10}${font Ubuntu:size=9,weight:bold}${color gray}${blink Caution: New Kodachi}
+${goto 10}${font Ubuntu:size=9,weight:bold}${color gray}Version: ${exec cat /home/kodachi/.kbase/version|cut -d : -f 1} is released.

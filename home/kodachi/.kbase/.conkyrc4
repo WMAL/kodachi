@@ -71,5 +71,8 @@ TEXT
 
 ${voffset 24}
 ${goto 10}${font Ubuntu:size=14,weight:bold}${color red}${blink Caution: Banned....} 
+${goto 10}${font Ubuntu:size=11,weight:bold}${color1}Kodachi is for anonymous surfing and not for mass downloads
+${goto 10}${font Ubuntu:size=11,weight:bold}${color1}If you need more bandwidth use Stealthwalker
 ${goto 10}${font Ubuntu:size=11,weight:bold}${color1}You have been banned from our network 
-${goto 10}${font Ubuntu:size=11,weight:bold}${color1}Please contact support@digi77.com
+${goto 10}${font Ubuntu:size=11,weight:bold}${color1}You can still use your own VPN  
+${goto 10}${font Ubuntu:size=11,weight:bold}${color1}Or to unblock you please contact support@digi77.com

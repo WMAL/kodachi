@@ -85,12 +85,14 @@ ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Age: ${color1}${alignr}${e
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Status: ${color1}${alignr}${exec cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 2|cut -d [ -f 2|cut -d ] -f 1|tr -d " \t\n\r"}
 #${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Country: ${color1}${alignr}${exec geoiplookup `cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 1`|cut -d : -f 2|cut -d , -f 2|sed 's/^ *//;s/ *$//'}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Country: ${color1}${alignr}${exec cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 3|tr -d " \t\n\r"}
+${goto 50}${font Ubuntu:size=7,weight:normal}${color3}MAC: ${color1}${alignr}${exec cat /sys/class/net/$(ip route show default | awk '/default/ {print $5}')/address}
 $else
 #${image /home/kodachi/.conky/images/vpnoff.png -p 40,115 -s 40x40}
 ${goto 50}${font Ubuntu:size=7,weight:bold}${color}VPN
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}IP: ${color1}${alignr}${exec cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 1|tr -d " \t\n\r"}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Status: ${color red}${alignr}${exec cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 2|cut -d [ -f 2|cut -d ] -f 1|tr -d " \t\n\r"}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Country: ${color1}${alignr}${exec geoiplookup `cat /home/kodachi/.kbase/.eeds-ipinfo|cut -d : -f 1`|cut -d : -f 2|cut -d , -f 2|sed 's/^ *//;s/ *$//'}
+${goto 50}${font Ubuntu:size=7,weight:normal}${color3}MAC: ${color1}${alignr}${exec cat /sys/class/net/$(ip route show default | awk '/default/ {print $5}')/address}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color red}${blink Caution: VPN is off....}
 $endif
 
@@ -135,8 +137,8 @@ $endif
 
 
 ${goto 50}${font Ubuntu:size=7,weight:bold}${color}Kodachi
-${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Kodachi ${font Ubuntu:size=7,weight:normal} version: ${color1}3.6  
-${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Latest  ${font Ubuntu:size=7,weight:normal} version: ${color1}${execi 300 curl -s -m 30 https://www.digi77.com/software/kodachi/version|cut -d , -f 2}
+${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Kodachi ${font Ubuntu:size=7,weight:normal} version: ${color1}3.7  
+${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Latest  ${font Ubuntu:size=7,weight:normal} version: ${color1}${exec cat /home/kodachi/.kbase/version|cut -d : -f 1}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}HWID:${color1}${alignr}${exec cat /home/kodachi/.kbase/HWID sed 's/^ *//;s/ *$//'| awk 'NR==1'}
 ${goto 50}${font Ubuntu:size=7,weight:normal}${color3}Status:${color1}${alignr}${exec cat /home/kodachi/.kbase/BandSatus sed 's/^ *//;s/ *$//'| awk 'NR==1'}
 
